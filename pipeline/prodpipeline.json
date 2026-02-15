@@ -1,0 +1,52 @@
+{
+	"name": "prodpipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute manager pipeline",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipelinemanager",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Execute pipelinemetadata",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Execute manager pipeline",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pipelinemetadata",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "ADF_tut"
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-01-22T13:51:58Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

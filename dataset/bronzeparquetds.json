@@ -1,0 +1,21 @@
+{
+	"name": "bronzeparquetds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storagels",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "CarSalesRawData",
+				"fileSystem": "bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

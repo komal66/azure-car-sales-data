@@ -1,0 +1,17 @@
+{
+	"name": "pipelinemetadataTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2026-01-17T15:50:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
